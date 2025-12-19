@@ -32,7 +32,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-5xl">
-            <h1 className="font-editorial text-4xl md:text-5xl leading-[0.95] mb-8 text-balance -ml-1 text-white">
+            <h1 className="font-editorial text-6xl md:text-8xl leading-[0.95] mb-8 text-balance -ml-1 text-white">
               {hero.headline}
             </h1>
             
