@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import content from "@/data/content.json";
+import portraitImage from "@assets/stock_images/man_portrait_black_a_318011a5.jpg";
 
 export default function About() {
   const { profile } = content;
@@ -49,6 +50,37 @@ export default function About() {
           {/* Sidebar / Stats */}
           <div className="md:col-span-4 md:pl-12">
             <div className="sticky top-32 space-y-12">
+              
+              {/* Portrait Image Block */}
+              <div className="relative group">
+                {/* Image Frame */}
+                <div className="border-2 border-border p-1 bg-background relative z-10">
+                  <div className="aspect-[3/4] relative overflow-hidden bg-muted">
+                    <img 
+                      src={portraitImage} 
+                      alt="Sash Mohapatra" 
+                      className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 ease-out"
+                    />
+                    {/* Technical overlays on image */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 left-4 text-white text-[10px] font-technical hidden group-hover:block animate-in fade-in slide-in-from-bottom-2">
+                      IMG_REF: SM_2025<br/>
+                      LOC: SEATTLE, WA
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Offset Decorative Border */}
+                <div className="absolute top-4 -right-4 w-full h-full border border-primary/30 -z-0"></div>
+                
+                {/* Caption */}
+                <div className="flex justify-between items-end mt-3 border-b border-border/20 pb-2">
+                  <span className="font-technical text-[10px] uppercase tracking-widest text-muted-foreground">Subject</span>
+                  <span className="font-editorial italic text-sm">Sash Mohapatra</span>
+                </div>
+              </div>
+
+              {/* Stats Block */}
               <div className="border border-border p-6 bg-white/50 relative overflow-hidden group hover:border-primary transition-colors">
                 <div className="absolute top-0 right-0 p-2 font-technical text-[10px] text-muted-foreground">STAT_01</div>
                 <span className="block text-6xl font-editorial font-bold text-primary mb-2">10+</span>
@@ -61,7 +93,7 @@ export default function About() {
                 <span className="font-technical text-xs tracking-widest uppercase">Ventures Founded</span>
               </div>
               
-              <div className="pt-12 border-t border-border mt-12">
+              <div className="pt-8 border-t border-border mt-12">
                 <h4 className="font-editorial text-2xl mb-4">Speaking & Advisory</h4>
                 <p className="text-sm text-muted-foreground mb-4">
                   Available for talks on AI implementation, automation in traditional business, and the future of media.
