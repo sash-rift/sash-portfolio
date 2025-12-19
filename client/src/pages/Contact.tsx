@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Send, Zap } from "lucide-react";
+import { Send, Zap, Loader2 } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -16,11 +17,28 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
+type FormData = z.infer<typeof formSchema>;
+
+async function submitContact(data: FormData) {
+  const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || "Failed to send message");
+  }
+  
+  return response.json();
+}
+
 export default function Contact() {
   const { profile } = content;
   const { toast } = useToast();
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -29,13 +47,26 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    toast({
-      title: "Message Transmitted",
-      description: "Secure connection established. Message received.",
-    });
-    console.log(values);
-    form.reset();
+  const mutation = useMutation({
+    mutationFn: submitContact,
+    onSuccess: () => {
+      toast({
+        title: "Message Transmitted",
+        description: "Secure connection established. Message received.",
+      });
+      form.reset();
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Transmission Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    },
+  });
+
+  function onSubmit(values: FormData) {
+    mutation.mutate(values);
   }
 
   return (
@@ -107,7 +138,12 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel className="font-technical text-[10px] uppercase tracking-widest text-white/60">Identify_Subject</FormLabel>
                           <FormControl>
-                            <Input placeholder="ENTER NAME" className="bg-black/50 border-white/10 rounded-none focus-visible:ring-gold focus-visible:border-gold text-white font-mono placeholder:text-white/20" {...field} />
+                            <Input 
+                              placeholder="ENTER NAME" 
+                              className="bg-black/50 border-white/10 rounded-none focus-visible:ring-gold focus-visible:border-gold text-white font-mono placeholder:text-white/20" 
+                              disabled={mutation.isPending}
+                              {...field} 
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -120,7 +156,12 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel className="font-technical text-[10px] uppercase tracking-widest text-white/60">Return_Address</FormLabel>
                           <FormControl>
-                            <Input placeholder="ENTER EMAIL" className="bg-black/50 border-white/10 rounded-none focus-visible:ring-gold focus-visible:border-gold text-white font-mono placeholder:text-white/20" {...field} />
+                            <Input 
+                              placeholder="ENTER EMAIL" 
+                              className="bg-black/50 border-white/10 rounded-none focus-visible:ring-gold focus-visible:border-gold text-white font-mono placeholder:text-white/20" 
+                              disabled={mutation.isPending}
+                              {...field} 
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -133,14 +174,32 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel className="font-technical text-[10px] uppercase tracking-widest text-white/60">Transmission_Data</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="ENTER MESSAGE..." className="bg-black/50 border-white/10 rounded-none min-h-[150px] focus-visible:ring-gold focus-visible:border-gold text-white font-mono placeholder:text-white/20" {...field} />
+                            <Textarea 
+                              placeholder="ENTER MESSAGE..." 
+                              className="bg-black/50 border-white/10 rounded-none min-h-[150px] focus-visible:ring-gold focus-visible:border-gold text-white font-mono placeholder:text-white/20" 
+                              disabled={mutation.isPending}
+                              {...field} 
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" className="w-full bg-gold text-black hover:bg-white hover:text-black uppercase tracking-widest font-bold py-6 rounded-none font-technical flex items-center gap-2 group">
-                      Initialize Transmission <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-gold text-black hover:bg-white hover:text-black uppercase tracking-widest font-bold py-6 rounded-none font-technical flex items-center gap-2 group"
+                      disabled={mutation.isPending}
+                    >
+                      {mutation.isPending ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          Transmitting...
+                        </>
+                      ) : (
+                        <>
+                          Initialize Transmission <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
                     </Button>
                   </form>
                 </Form>
