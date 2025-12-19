@@ -1,0 +1,137 @@
+{
+  "profile": {
+    "name": "Sash Mohapatra",
+    "role": "Future-Tech Media & Learning Ecosystem Builder",
+    "tagline": "Explore Tomorrow, Today",
+    "bio": "I am a technologist and entrepreneur bridging the gap between today's reality and tomorrow's possibilities. With a deep background in Microsoft Azure AI and a hands-on approach to building automated systems, I create media and learning ecosystems that decode the future. From the operational trenches of running Crazy Bubbles to the visionary heights of The Rift, I build what's next.",
+    "email": "hello@sashmohapatra.com",
+    "social": {
+      "twitter": "https://twitter.com/sashmohapatra",
+      "linkedin": "https://linkedin.com/in/sashmohapatra",
+      "github": "https://github.com/sashmohapatra"
+    }
+  },
+  "hero": {
+    "headline": "Architecting the Future of Media & Intelligence",
+    "subheadline": "Building The Rift, automating the mundane, and exploring the edges of AI.",
+    "cta_primary": { "label": "View Work", "link": "/work" },
+    "cta_secondary": { "label": "2025 Wrapped", "link": "/wrapped" }
+  },
+  "projects": [
+    {
+      "id": "the-rift",
+      "title": "The Rift",
+      "category": "Media & Learning Ecosystem",
+      "description": "A future-tech media and learning ecosystem designed to help people navigate the rapidly changing landscape of technology.",
+      "link": "#",
+      "year": "2024-Present"
+    },
+    {
+      "id": "aiin30",
+      "title": "AIin30",
+      "category": "Education Program",
+      "description": "An intensive 30-day program demystifying Artificial Intelligence for professionals, featuring webinars and hands-on workshops.",
+      "link": "#",
+      "year": "2025"
+    },
+    {
+      "id": "pollzy",
+      "title": "Pollzy",
+      "category": "SaaS Product",
+      "description": "Visuals and product direction for a new polling platform designed to capture real-time sentiment with high fidelity.",
+      "link": "#",
+      "year": "2025"
+    },
+    {
+      "id": "pulse-automation",
+      "title": "Pulse Automation",
+      "category": "Workflow Automation",
+      "description": "Automated pipeline for content aggregation and distribution, leveraging Make.com and custom scripts to streamline media operations.",
+      "link": "#",
+      "year": "2025"
+    },
+    {
+      "id": "nuro",
+      "title": "Nuro",
+      "category": "Experimental AI",
+      "description": "Explorations in neural interfaces and advanced AI agents.",
+      "link": "#",
+      "year": "2024"
+    },
+    {
+      "id": "crazy-bubbles",
+      "title": "Crazy Bubbles",
+      "category": "Operations & Automation",
+      "description": "Applying enterprise-grade automation and AI operational efficiencies to the real-world business of laundromats.",
+      "link": "#",
+      "year": "Ongoing"
+    }
+  ],
+  "writing": [
+    {
+      "id": "article-1",
+      "title": "The Age of Autonomous Agents",
+      "summary": "How agentic workflows are reshaping the way we build software and businesses.",
+      "date": "Nov 2025",
+      "link": "#"
+    },
+    {
+      "id": "article-2",
+      "title": "From Cloud to Edge: The Azure Journey",
+      "summary": "Reflections on a decade of cloud transformation and where the infrastructure is heading next.",
+      "date": "Aug 2025",
+      "link": "#"
+    },
+    {
+      "id": "article-3",
+      "title": "Why Laundromats Need AI",
+      "summary": "Unlocking operational efficiency in traditional brick-and-mortar businesses using modern tech stacks.",
+      "date": "May 2025",
+      "link": "#"
+    }
+  ],
+  "wrapped2025": [
+    {
+      "month": "January",
+      "title": "The Rift Launch",
+      "description": "Officially launched The Rift as a premier destination for future-tech discourse.",
+      "stat": "1 Launch"
+    },
+    {
+      "month": "March",
+      "title": "Webflow Migration",
+      "description": "Migrated core platform to Webflow + Memberstack for better scalability and user management.",
+      "stat": "100% Migration"
+    },
+    {
+      "month": "May",
+      "title": "Pulse Pipeline",
+      "description": "Built and deployed the automated Pulse content pipeline using Make.com.",
+      "stat": "50+ Hrs Saved/Mo"
+    },
+    {
+      "month": "July",
+      "title": "AIin30 Program",
+      "description": "Created and ran the first cohort of the AIin30 learning program.",
+      "stat": "30 Days"
+    },
+    {
+      "month": "September",
+      "title": "Pollzy Visuals",
+      "description": "Defined visual identity and product direction for Pollzy.",
+      "stat": "New Brand"
+    },
+    {
+      "month": "November",
+      "title": "Replit Apps",
+      "description": "Experimented with rapid prototyping of internal tools using Replit.",
+      "stat": "5 Apps Built"
+    },
+    {
+      "month": "December",
+      "title": "Founder Reflection",
+      "description": "Looking back on a year of building, automating, and teaching. The foundation is set for 2026.",
+      "stat": "Year End"
+    }
+  ]
+}
