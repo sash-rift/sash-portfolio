@@ -4,7 +4,7 @@
     "role": "Future-Tech Media & Learning Ecosystem Builder",
     "tagline": "Explore Tomorrow, Today",
     "bio": "I am a technologist and entrepreneur bridging the gap between today's reality and tomorrow's possibilities. With a deep background in Microsoft Azure AI and a hands-on approach to building automated systems, I create media and learning ecosystems that decode the future. From the operational trenches of running Crazy Bubbles to the visionary heights of The Rift, I build what's next.",
-    "email": "hello@sashmohapatra.com",
+    "email": "sash@therift.ai",
     "social": {
       "twitter": "https://twitter.com/sashmohapatra",
       "linkedin": "https://linkedin.com/in/sashmohapatra",
@@ -12,7 +12,7 @@
     }
   },
   "hero": {
-    "headline": "Architecting the Future of Media & Intelligence",
+    "headline": "What we learn, unlocks potential, what we build, transforms us",
     "subheadline": "Building The Rift, automating the mundane, and exploring the edges of AI.",
     "cta_primary": { "label": "View Work", "link": "/work" },
     "cta_secondary": { "label": "2025 Wrapped", "link": "/wrapped" }
