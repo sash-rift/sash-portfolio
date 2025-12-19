@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Plus } from "lucide-react";
 
 interface ProjectProps {
   project: {
@@ -14,36 +14,50 @@ interface ProjectProps {
 }
 
 export function ProjectCard({ project, index }: ProjectProps) {
+  // Pad single digit index with zero
+  const displayIndex = (index + 1).toString().padStart(2, '0');
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="group relative border-b border-border py-12 md:py-16 hover:bg-card/50 transition-colors px-4"
+      className="group relative border-b border-border py-12 md:py-16 hover:bg-card/50 transition-colors px-4 overflow-hidden"
     >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        <div className="md:col-span-3 text-xs uppercase tracking-widest text-muted-foreground font-medium">
-          {project.year} — {project.category}
+      {/* Technical Hover Reveal Background */}
+      <div className="absolute inset-0 grid-lines opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+        <div className="md:col-span-3 flex flex-col gap-2">
+           <span className="font-technical text-xs text-primary/80">FIG. {displayIndex}</span>
+           <span className="font-technical text-[10px] uppercase tracking-widest text-muted-foreground">
+             {project.year} — {project.category}
+           </span>
         </div>
         
         <div className="md:col-span-6">
-          <h3 className="font-editorial text-4xl md:text-5xl font-medium mb-4 group-hover:text-primary transition-colors">
+          <h3 className="font-editorial text-4xl md:text-6xl font-normal mb-4 group-hover:text-primary transition-colors cursor-pointer">
             {project.title}
           </h3>
-          <p className="text-lg text-muted-foreground max-w-xl">
+          <p className="text-lg text-muted-foreground max-w-xl font-light">
             {project.description}
           </p>
         </div>
         
         <div className="md:col-span-3 flex justify-end">
-          <div className="w-12 h-12 rounded-full border border-foreground flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all transform group-hover:-rotate-45">
-            <ArrowUpRight className="w-5 h-5" />
+          <div className="relative">
+            <div className="w-16 h-16 border border-foreground/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <ArrowUpRight className="w-6 h-6" />
+            </div>
+            {/* Decorative crosshairs */}
+            <Plus className="absolute -top-1.5 -left-1.5 w-3 h-3 text-foreground/30" />
+            <Plus className="absolute -bottom-1.5 -right-1.5 w-3 h-3 text-foreground/30" />
           </div>
         </div>
       </div>
       
-      <Link href="/work" className="absolute inset-0 z-10" aria-label={`View ${project.title}`}></Link>
+      <Link href="/work" className="absolute inset-0 z-20" aria-label={`View ${project.title}`}></Link>
     </motion.div>
   );
 }
