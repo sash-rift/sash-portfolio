@@ -33,7 +33,7 @@
   --color-saffron: hsl(var(--saffron)); /* Saffron accent (bright orange) */
 
   --font-serif: "Playfair Display", serif;
-  --font-sans: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
   --animate-accordion-down: accordion-down 0.2s ease-out;
