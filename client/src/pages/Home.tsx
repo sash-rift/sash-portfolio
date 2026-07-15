@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { site } from "@/data/site";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Linkedin } from "lucide-react";
 import { useState } from "react";
 
 /* ---------- small building blocks ---------- */
@@ -454,13 +454,24 @@ export default function Home() {
                     <p key={i}>{p}</p>
                   ))}
                 </div>
-                <a
-                  href={links.resume}
-                  className="mt-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest border border-foreground px-5 py-3 hover:bg-foreground hover:text-background transition-colors"
-                >
-                  full résumé
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                <div className="mt-10 flex flex-wrap items-center gap-3">
+                  <a
+                    href={links.resume}
+                    className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest border border-foreground px-5 py-3 hover:bg-foreground hover:text-background transition-colors"
+                  >
+                    full résumé
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={links.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest border border-border text-foreground/70 px-5 py-3 hover:border-foreground hover:text-foreground transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    linkedin
+                  </a>
+                </div>
               </div>
               <div className="md:col-span-5 order-1 md:order-2">
                 <Headshot src={links.headshot} />
