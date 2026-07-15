@@ -171,6 +171,13 @@ export const site = {
         cta: { label: "pipcal.app", href: "https://pipcal.app" },
         soon: true,
       },
+      {
+        name: "Crazybubbles Laundromat",
+        tag: "brand",
+        desc: "A Brooklyn laundromat I built from scratch and have run since January 2025, hiring and managing the team. The brand and site are built with Claude, along with a dashboard that consolidates two point-of-sale systems into one view for staffing.",
+        cta: { label: "crazybubbles.co", href: "https://crazybubbles.co" },
+        soon: false,
+      },
     ],
   },
 
