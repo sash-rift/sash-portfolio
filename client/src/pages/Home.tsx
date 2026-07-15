@@ -169,11 +169,11 @@ export default function Home() {
     links,
   } = site;
 
-  // Group project cards into stacking rows: featured card alone, then pairs.
+  // Group project cards into stacking rows: each featured card alone, then pairs.
   const projItems = projects.cards.map((card, i) => ({ card, i }));
   const projRows: { card: any; i: number }[][] = [];
-  const featItem = projItems.find((x) => x.card.featured);
-  if (featItem) projRows.push([featItem]);
+  const featItems = projItems.filter((x) => x.card.featured);
+  featItems.forEach((f) => projRows.push([f]));
   const projRest = projItems.filter((x) => !x.card.featured);
   for (let k = 0; k < projRest.length; k += 2) projRows.push(projRest.slice(k, k + 2));
 
