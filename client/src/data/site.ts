@@ -36,7 +36,7 @@ export const site = {
     label: "~/thesis",
     heading: "How I think about skilling",
     lead:
-      "The tools change every week. The way you work with them changes slowly, and that is the part worth learning.",
+      "The tools change every week. The skill worth building is knowing how to direct them across your work.",
     body: [
       "Model capability and the harnesses around it move fast. New models, new tools, something to relearn most weeks. Keeping up with that is real work, and it wears people out.",
       "Underneath the churn is something steadier: a way of working with machines. Once you have it, the next tool is a new instrument for a craft you already know. That way of working has a name in how I teach it. Orchestration: directing AI across a whole piece of work while keeping your hand on the outcome. The tools will keep changing. The mental model is what carries you from one release to the next without starting over.",
@@ -57,7 +57,7 @@ export const site = {
     lead:
       "Most AI training is a one-off. People learn a few prompts and plateau, because nothing tells them what the next real step is.",
     body:
-      "A path fixes that. It shows a person where they stand and what changes at the next rung, and it shows a company how to move from scattered use to capability it can count on. I built two versions of the same path: one for a person building a career, one for an organization building capability. Each rung has its own training and its own outcome you can point to.",
+      "A path fixes that. It shows a person where they stand and what changes at the next step, and it shows a company how to move from scattered use to capability it can count on. I built two versions of the same path: one for a person building a career, one for an organization building capability. Each step has its own training and its own outcome you can point to.",
     ladders: [
       {
         title: "For a person",
@@ -104,7 +104,7 @@ export const site = {
       },
     ],
     footnote:
-      "Change management runs alongside every rung, because capability only counts once people adopt it.",
+      "Change management runs alongside every step, because capability only counts once people adopt it.",
   },
 
   builtWithClaude: {
