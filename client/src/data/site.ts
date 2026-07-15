@@ -168,7 +168,7 @@ export const site = {
         name: "Pipcal",
         tag: "product",
         desc: "A calendar that gives you your whole week at a glance, with a lighter way to schedule peer to peer. In build now.",
-        cta: { label: "pipcall.app", href: "https://pipcall.app" },
+        cta: { label: "pipcal.app", href: "https://pipcal.app" },
         soon: true,
       },
     ],
