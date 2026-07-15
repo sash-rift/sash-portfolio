@@ -9,7 +9,7 @@ const links = [
 ];
 
 const CAL = "https://cal.com/sash-mohapatra/chat-with-sash";
-const RESUME = "/Sash-Mohapatra-Resume.pdf";
+const RESUME = "/Sash-Mohapatra-Resume-Branded.pdf";
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
