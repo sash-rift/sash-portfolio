@@ -1,32 +1,30 @@
-import content from "@/data/content.json";
-import { Link } from "wouter";
+import { site } from "@/data/site";
 
 export function Footer() {
-  const { profile } = content;
-  const currentYear = new Date().getFullYear();
+  const { links, contact } = site;
+  const year = 2026;
 
   return (
-    <footer className="border-t border-border mt-20 bg-card">
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <div>
-            <h3 className="font-editorial text-2xl mb-2">{profile.name}</h3>
-            <p className="text-muted-foreground text-sm max-w-md">{profile.tagline}</p>
-          </div>
-          
-          <div className="flex gap-6">
-            <a href={profile.social.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Twitter</a>
-            <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
-            <a href={profile.social.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
+    <footer className="border-t border-white/10 bg-[#15100a] text-[#efe7d8]">
+      <div className="container mx-auto px-6 py-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <span className="font-mono text-xs text-[#efe7d8]/50">
+            {contact.signoff}
+          </span>
+          <div className="flex gap-6 font-mono text-xs uppercase tracking-widest">
+            <a href={`mailto:${links.email}`} className="text-[#efe7d8]/60 hover:text-gold transition-colors">
+              Email
+            </a>
+            <a href={links.riftlab} target="_blank" rel="noopener noreferrer" className="text-[#efe7d8]/60 hover:text-gold transition-colors">
+              Rift Lab
+            </a>
+            <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#efe7d8]/60 hover:text-gold transition-colors">
+              LinkedIn
+            </a>
           </div>
         </div>
-        
-        <div className="border-t border-border/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground uppercase tracking-widest">
-          <span>&copy; {currentYear} Sash Mohapatra</span>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="/work" className="hover:text-primary transition-colors">Projects</Link>
-            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
-          </div>
+        <div className="border-t border-white/10 mt-8 pt-6 font-mono text-[11px] text-[#efe7d8]/40 uppercase tracking-widest">
+          © {year} Sash Mohapatra
         </div>
       </div>
     </footer>

@@ -1,7 +1,6 @@
 import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
@@ -23,14 +22,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <div className="fixed bottom-6 right-6 w-[1px] h-4 bg-foreground z-50" />
 
       <Navigation />
-      <motion.main 
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex-grow relative"
-      >
-        {children}
-      </motion.main>
+      <main className="flex-grow relative">{children}</main>
       <Footer />
     </div>
   );
