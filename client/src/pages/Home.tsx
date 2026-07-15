@@ -79,6 +79,18 @@ function ProjectCardBody({ card, i }: { card: any; i: number }) {
     <span className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-gold">
       <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
       coming soon
+      {hasLink && (
+        <a
+          href={card.cta.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-foreground/60 hover:text-primary transition-colors"
+        >
+          <span className="text-foreground/30">·</span>
+          {card.cta.label}
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </a>
+      )}
     </span>
   ) : (
     hasLink && (
