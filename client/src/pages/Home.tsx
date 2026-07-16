@@ -154,6 +154,91 @@ function ProjectCardBody({ card, i }: { card: any; i: number }) {
   );
 }
 
+/* ---------- the orchestrator method loop ---------- */
+
+function MethodLoop({ principles }: { principles: { n: number; name: string }[] }) {
+  const N = principles.length;
+  const cx = 380, cy = 245, R = 150, nodeR = 22;
+  const rad = (k: number, off = 0) => ((-90 + k * (360 / N) + off) * Math.PI) / 180;
+  const at = (k: number, r: number, off = 0): [number, number] => [
+    cx + r * Math.cos(rad(k, off)),
+    cy + r * Math.sin(rad(k, off)),
+  ];
+  const fg = "hsl(var(--foreground))";
+  const gold = "hsl(var(--gold))";
+  return (
+    <svg
+      viewBox="0 0 760 500"
+      className="w-full max-w-xl mx-auto"
+      role="img"
+      aria-label="The Orchestrator Method as a loop: define the end state, plan with AI, deconstruct and delegate, stay in the loop, build for reuse, then start the next pass at a higher level."
+    >
+      <defs>
+        <marker id="omArr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" style={{ fill: fg }} />
+        </marker>
+        <marker id="omArrG" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" style={{ fill: gold }} />
+        </marker>
+      </defs>
+
+      {principles.map((_, k) => {
+        const [ax, ay] = at(k, R, 16);
+        const [bx, by] = at((k + 1) % N, R, -16);
+        const reuse = (k + 1) % N === 0;
+        return (
+          <path
+            key={`a${k}`}
+            d={`M ${ax} ${ay} A ${R} ${R} 0 0 1 ${bx} ${by}`}
+            fill="none"
+            style={{ stroke: reuse ? gold : fg, strokeOpacity: reuse ? 1 : 0.38 }}
+            strokeWidth={reuse ? 2.5 : 1.75}
+            markerEnd={`url(#${reuse ? "omArrG" : "omArr"})`}
+          />
+        );
+      })}
+
+      {principles.map((p, k) => {
+        const [nx, ny] = at(k, R);
+        const c = Math.cos(rad(k)), s = Math.sin(rad(k));
+        const lx = nx + c * (nodeR + 12);
+        const ly = ny + s * (nodeR + 12);
+        const anchor = c > 0.3 ? "start" : c < -0.3 ? "end" : "middle";
+        const dy = s > 0.5 ? 12 : s < -0.5 ? -4 : 4;
+        return (
+          <g key={`n${k}`}>
+            <circle cx={nx} cy={ny} r={nodeR} style={{ fill: fg }} />
+            <text
+              x={nx}
+              y={ny}
+              textAnchor="middle"
+              dominantBaseline="central"
+              style={{ fill: "hsl(var(--background))", fontFamily: "var(--font-mono)", fontSize: 15, fontWeight: 600 }}
+            >
+              {p.n}
+            </text>
+            <text
+              x={lx}
+              y={ly + dy}
+              textAnchor={anchor as "start" | "middle" | "end"}
+              style={{ fill: fg, fontFamily: "var(--font-sans)", fontSize: 14.5 }}
+            >
+              {p.name}
+            </text>
+          </g>
+        );
+      })}
+
+      <text x={cx} y={cy - 5} textAnchor="middle" style={{ fill: "hsl(var(--muted-foreground))", fontFamily: "var(--font-mono)", fontSize: 10.5, letterSpacing: 1.5 }}>
+        RUN AS A SEQUENCE
+      </text>
+      <text x={cx} y={cy + 13} textAnchor="middle" style={{ fill: gold, fontFamily: "var(--font-mono)", fontSize: 10.5, letterSpacing: 1.5 }}>
+        LOOP TO COMPOUND
+      </text>
+    </svg>
+  );
+}
+
 /* ---------- page ---------- */
 
 export default function Home() {
@@ -168,6 +253,8 @@ export default function Home() {
     contact,
     links,
   } = site;
+
+  const method = perspective.method;
 
   // Group project cards into stacking rows: each featured card alone, then pairs.
   const projItems = projects.cards.map((card, i) => ({ card, i }));
@@ -257,6 +344,24 @@ export default function Home() {
               </aside>
             </div>
           </div>
+
+          {method && (
+            <div className="reveal mt-16 md:mt-20 border-t border-border pt-12 md:pt-16">
+              <div className="grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+                <div className="md:col-span-5">
+                  <span className="block font-mono text-xs uppercase tracking-widest text-primary mb-3">
+                    {method.label}
+                  </span>
+                  <h3 className="font-editorial text-3xl md:text-4xl mb-5">{method.heading}</h3>
+                  <p className="text-lg leading-relaxed text-foreground/90 mb-5">{method.primer}</p>
+                  <p className="font-mono text-xs uppercase tracking-widest text-gold">{method.climb}</p>
+                </div>
+                <div className="md:col-span-7">
+                  <MethodLoop principles={method.principles} />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

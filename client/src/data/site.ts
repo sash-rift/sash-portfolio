@@ -49,6 +49,20 @@ export const site = {
     pullQuote:
       "To work well with AI, you have to get that knowledge out of your head and into language a machine can use.",
     pullQuoteLabel: "the shift",
+    method: {
+      label: "the method",
+      heading: "The Orchestrator Method™",
+      primer:
+        "I teach this as The Orchestrator Method™: five principles for delegating real professional work to AI. You run them once as a sequence. They close into a loop, because the last principle turns the work into something reusable, so the next pass starts further ahead.",
+      climb: "Each pass climbs: prompt → skill → multi-agent system.",
+      principles: [
+        { n: 1, name: "Define the end state" },
+        { n: 2, name: "Plan with AI" },
+        { n: 3, name: "Deconstruct & delegate" },
+        { n: 4, name: "Stay in the loop" },
+        { n: 5, name: "Build for reuse" },
+      ],
+    },
   },
 
   capabilityPath: {
