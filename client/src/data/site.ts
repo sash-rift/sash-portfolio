@@ -53,7 +53,7 @@ export const site = {
       label: "the method",
       heading: "The Orchestrator Method™",
       primer:
-        "I teach this as The Orchestrator Method™: five principles for delegating real professional work to AI. You run them once as a sequence. They close into a loop, because the last principle turns the work into something reusable, so the next pass starts further ahead.",
+        "I teach this as The Orchestrator Method™: five principles for delegating real professional work to AI. Say you need a competitive brief. The first time, you run all five in order, and the last one saves the whole workflow as a reusable skill. Next time you need that brief, you run the skill in one step and start where you left off. The first pass takes thirty minutes. Every one after takes two.",
       climb: "Each pass climbs: prompt → skill → multi-agent system.",
       principles: [
         { n: 1, name: "Define the end state" },
