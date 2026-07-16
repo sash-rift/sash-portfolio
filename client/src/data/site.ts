@@ -42,7 +42,7 @@ export const site = {
       "Underneath the churn is something steadier: a way of working with machines. Once you have it, the next tool is a new instrument for a craft you already know. That way of working has a name in how I teach it. Orchestration: directing AI across a whole piece of work while keeping your hand on the outcome. The tools will keep changing. The mental model is what carries you from one release to the next without starting over.",
       "That model is a new way to work, and the hard part of it is human before it is technical. Handing your work to a collaborator you cannot fully see raises real questions of trust and control. I spend as much time on that transition as on any feature.",
       "The hardest thing to hand an AI is the judgment you have built but never had to explain. Over the past few decades, professions grew through specialization, and specialists build intuition they can no longer put into words. A banker or a trial lawyer knows things in their hands that never made it onto a page. To work well with AI, you have to get that knowledge out of your head and into language a machine can use. My frameworks are built to help you do that: surface your own judgment, describe it, and let AI carry it so your experience scales with the work.",
-      "Every framework I build, the Orchestrator Method and everything after it, is built to augment and scale what a person can do, not to replace them. Replace the person and their judgment stops shaping the real work, and that judgment is what we are trying to scale.",
+      "Every framework I build, the Orchestrator Method™ and everything after it, is built to augment and scale what a person can do, not to replace them. Replace the person and their judgment stops shaping the real work, and that judgment is what we are trying to scale.",
     ],
     // words rendered in accent inside the body
     accentWords: ["Orchestration"],
@@ -158,7 +158,7 @@ export const site = {
       {
         name: "Rift Dispatch",
         tag: "newsletter",
-        desc: "My weekly newsletter on building with AI and the ideas behind the Orchestrator Method. Written and produced the same way I teach.",
+        desc: "My weekly newsletter on building with AI and the ideas behind the Orchestrator Method™. Written and produced the same way I teach.",
         cta: { label: "riftdispatch.substack.com", href: "https://riftdispatch.substack.com" },
         soon: false,
       },
@@ -186,7 +186,7 @@ export const site = {
       {
         name: "Rift Lab",
         tag: "company",
-        desc: "The AI education and advisory company I founded. Public and private cohorts, the Orchestrator Method in practice, and the field reports below.",
+        desc: "The AI education and advisory company I founded. Public and private cohorts, the Orchestrator Method™ in practice, and the field reports below.",
         note: "Anthropic Partner Network",
         cta: { label: "riftlab.ai", href: "https://riftlab.ai" },
         soon: false,
@@ -234,7 +234,7 @@ export const site = {
     body: [
       "I came up as an enterprise support engineer, resolving critical failures for large IT organizations. Fixing the same problems repeatedly, I moved into teaching the teams to run their own systems, and that became my work. Over a decade I built technical curriculum and trained more than a thousand IT professionals across Southeast Asia and the United States, writing every hands-on lab myself. The training measurably reduced outages and improved IT health.",
       "Then I spent a decade helping enterprises adopt what came next: first the cloud, then data and AI. My work was enablement, which meant teaching every group in the room. On one major bank's $200M move to the cloud, I taught the IT admins the migration and data-privacy details and walked the executives through banking use cases. I brought the legal team up to speed on eDiscovery in the new tools and worked with the bank's security team to clear compliance. Getting a change that large to land means bringing every one of those people with you.",
-      "When AI arrived, I built the education for it. I founded Rift Lab to teach AI-native work, developed the Orchestrator Method, and now run cohorts and advise leaders on adoption.",
+      "When AI arrived, I built the education for it. I founded Rift Lab to teach AI-native work, developed the Orchestrator Method™, and now run cohorts and advise leaders on adoption.",
       "Across every one of those shifts, the job has been the same. I help people move through change, and I build the learning that gets them there.",
     ],
   },
