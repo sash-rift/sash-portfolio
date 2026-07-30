@@ -141,7 +141,7 @@ export const site = {
     heading: "Projects",
     lead: "I teach building because I build. Here is some of what I have shipped.",
     intro:
-      "A certification, a company, two products, and a newsletter, all built the way I teach, with Claude in the terminal and me directing every step.",
+      "A certification, a company, two products, a newsletter, and a weekly live show, all built the way I teach, with Claude in the terminal and me directing every step.",
     cards: [
       {
         name: "AI Orchestration Certification for Knowledge Workers",
@@ -177,6 +177,14 @@ export const site = {
         soon: false,
       },
       {
+        name: "Rift Lab",
+        tag: "company",
+        desc: "The AI education and advisory company I founded. Public and private cohorts, the Orchestrator Method™ in practice, and the field reports below.",
+        note: "Anthropic Partner Network",
+        cta: { label: "riftlab.ai", href: "https://riftlab.ai" },
+        soon: false,
+      },
+      {
         name: "Pollzy",
         tag: "product",
         desc: "An AI-native polling tool I built and ship as a founder. A live app people use, built on the same orchestration approach I teach.",
@@ -191,18 +199,17 @@ export const site = {
         soon: true,
       },
       {
+        name: "Human in the Loop",
+        tag: "live show",
+        desc: "A weekly live show I co-host with Chris Shanku, another ex-Microsoft builder. Every Friday at 4:05 PM ET, one of us goes live for fifteen minutes and screen shares one AI tool we actually used that week. No slides. Transcripts and show notes for every episode are on the site.",
+        cta: { label: "humanintheloop.stream", href: "https://humanintheloop.stream" },
+        soon: false,
+      },
+      {
         name: "Crazybubbles Laundromat",
         tag: "brand",
         desc: "A Brooklyn laundromat I built from scratch and have run since January 2025, hiring and managing the team. The brand and site are built with Claude, along with a dashboard that consolidates two point-of-sale systems into one view for staffing.",
         cta: { label: "crazybubbles.co", href: "https://crazybubbles.co" },
-        soon: false,
-      },
-      {
-        name: "Rift Lab",
-        tag: "company",
-        desc: "The AI education and advisory company I founded. Public and private cohorts, the Orchestrator Method™ in practice, and the field reports below.",
-        note: "Anthropic Partner Network",
-        cta: { label: "riftlab.ai", href: "https://riftlab.ai" },
         soon: false,
       },
     ],
