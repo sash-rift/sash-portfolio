@@ -144,7 +144,7 @@ export const site = {
       "A certification, a company, two products, a newsletter, and a weekly live show, all built the way I teach, with Claude in the terminal and me directing every step.",
     cards: [
       {
-        name: "AI Orchestration Certification for Knowledge Workers",
+        name: "AI Orchestration Certification for Business Leaders",
         tag: "education",
         featured: true,
         desc: "The live cohort certification I created and teach. First pilot November 2025, now in its sixth cohort. The whole curriculum is written and produced with Claude.",
